@@ -11,5 +11,8 @@ int main(int argc, char* args[])
 
     RenderWindow window("game v1.0", 800, 600, false);
 
+    window.cleanUp();
+    SDL_Quit();
+
     return 0;
 }

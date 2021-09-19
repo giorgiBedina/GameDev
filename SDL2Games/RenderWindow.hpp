@@ -7,7 +7,7 @@ class RenderWindow
 {
 public:
     RenderWindow(const char* w_tittle, int w_width, int w_heigh, bool fullscreen);
-    ~RenderWindow();
+    void cleanUp();
 private:
     SDL_Window* window;
     SDL_Renderer* renderer; 
