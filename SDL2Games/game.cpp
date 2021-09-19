@@ -1,4 +1,4 @@
-#include "RenderWindow.hpp"
+#include "RenderWindow.cpp"
 #include <iostream>
 
 int main(int argc, char* args[])
@@ -9,7 +9,7 @@ int main(int argc, char* args[])
     if(!(IMG_Init(IMG_INIT_PNG)))
         std::cout << "IMG_init  HAS FAILED . ERROR: " << SDL_GetError() << std::endl; 
 
-
+    RenderWindow window("game v1.0", 800, 600, false);
 
     return 0;
 }
