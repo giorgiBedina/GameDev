@@ -36,7 +36,19 @@ void RenderWindow::clear()
 
 void RenderWindow::renderTexture(SDL_Texture* w_texture)
 {
-    SDL_RenderCopy(renderer, w_texture, NULL, NULL);
+    SDL_Rect texture_src;
+    texture_src.x = 0;
+    texture_src.y = 0;
+    texture_src.w = 32;
+    texture_src.h = 32;
+
+    SDL_Rect texture_dst;
+    texture_dst.x = 0;
+    texture_dst.y = 0;
+    texture_dst.w = 32;
+    texture_dst.h = 32;
+
+    SDL_RenderCopy(renderer, w_texture, &texture_src, &texture_dst);
 }
 
 void RenderWindow::display()

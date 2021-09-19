@@ -1,4 +1,5 @@
 #include "RenderWindow.cpp"
+#include "entity/entity.cpp"
 #include <iostream>
 
 int main(int argc, char* args[])
