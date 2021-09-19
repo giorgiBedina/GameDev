@@ -9,9 +9,20 @@ int main(int argc, char* args[])
     if(!(IMG_Init(IMG_INIT_PNG)))
         std::cout << "IMG_init  HAS FAILED . ERROR: " << SDL_GetError() << std::endl; 
 
-    RenderWindow window("game v1.0", 800, 600, false);
+    RenderWindow game("game v1.0", 800, 600, false);
 
-    window.cleanUp();
+    SDL_Event event;
+
+    while(game.running())
+    {
+        while(SDL_PollEvent(&event))
+        {
+            if (event.type == SDL_QUIT)
+                game.quit();
+        }
+    }
+
+    game.cleanUp();
     SDL_Quit();
 
     return 0;

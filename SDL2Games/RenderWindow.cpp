@@ -16,3 +16,13 @@ void RenderWindow::cleanUp()
 {
     SDL_DestroyWindow(window);
 }
+
+bool RenderWindow::running()
+{
+    return gameRunning;
+}
+
+void RenderWindow::quit()
+{
+    gameRunning= false;
+}

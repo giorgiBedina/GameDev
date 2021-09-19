@@ -8,7 +8,10 @@ class RenderWindow
 public:
     RenderWindow(const char* w_tittle, int w_width, int w_heigh, bool fullscreen);
     void cleanUp();
+    bool running();
+    void quit();
 private:
     SDL_Window* window;
     SDL_Renderer* renderer; 
+    bool gameRunning = true;
 };
