@@ -14,6 +14,8 @@ int main(int argc, char* args[])
 
     SDL_Texture* grassTexture = game.loadTexture("texture/ground_grass_1.png");
 
+    Entity ground(100, 300, grassTexture);
+
     SDL_Event event;
 
     while(game.running())
@@ -25,7 +27,7 @@ int main(int argc, char* args[])
         }
 
         game.clear();
-        game.renderTexture(grassTexture);
+        game.renderTexture(ground);
         game.display();
     }
 

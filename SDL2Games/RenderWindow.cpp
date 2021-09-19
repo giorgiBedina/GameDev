@@ -34,21 +34,21 @@ void RenderWindow::clear()
     SDL_RenderClear(renderer);
 }
 
-void RenderWindow::renderTexture(SDL_Texture* w_texture)
+void RenderWindow::renderTexture(Entity& given_entity)
 {
     SDL_Rect texture_src;
-    texture_src.x = 0;
-    texture_src.y = 0;
-    texture_src.w = 32;
-    texture_src.h = 32;
+    texture_src.x = given_entity.get_curFrame().x;
+    texture_src.y = given_entity.get_curFrame().y;
+    texture_src.w = given_entity.get_curFrame().w;
+    texture_src.h = given_entity.get_curFrame().h;
 
     SDL_Rect texture_dst;
-    texture_dst.x = 0;
-    texture_dst.y = 0;
-    texture_dst.w = 32;
-    texture_dst.h = 32;
+    texture_dst.x = given_entity.get_x();
+    texture_dst.y = given_entity.get_y();
+    texture_dst.w = given_entity.get_curFrame().w;
+    texture_dst.h = given_entity.get_curFrame().h;
 
-    SDL_RenderCopy(renderer, w_texture, &texture_src, &texture_dst);
+    SDL_RenderCopy(renderer, given_entity.get_textyre(), &texture_src, &texture_dst);
 }
 
 void RenderWindow::display()
