@@ -18,7 +18,7 @@ bool RenderWindow::running()
     return gameRunning;
 }
 
-SDL_Texture* RenderWindow::loadTexure(const char* texture_filePath)
+SDL_Texture* RenderWindow::loadTexture(const char* texture_filePath)
 {
     SDL_Texture* texture = NULL;
     texture = IMG_LoadTexture(renderer, texture_filePath);
@@ -27,6 +27,21 @@ SDL_Texture* RenderWindow::loadTexure(const char* texture_filePath)
         std::cout << "Failed to load texture. Error: " << SDL_GetError() << std::endl;
 
     return texture;
+}
+
+void RenderWindow::clear()
+{
+    SDL_RenderClear(renderer);
+}
+
+void RenderWindow::renderTexture(SDL_Texture* w_texture)
+{
+    SDL_RenderCopy(renderer, w_texture, NULL, NULL);
+}
+
+void RenderWindow::display()
+{
+    SDL_RenderPresent(renderer);
 }
 
 void RenderWindow::quit()

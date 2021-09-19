@@ -11,6 +11,8 @@ int main(int argc, char* args[])
 
     RenderWindow game("game v1.0", 800, 600, false);
 
+    SDL_Texture* grassTexture = game.loadTexture("texture/ground_grass_1.png");
+
     SDL_Event event;
 
     while(game.running())
@@ -20,6 +22,10 @@ int main(int argc, char* args[])
             if (event.type == SDL_QUIT)
                 game.quit();
         }
+
+        game.clear();
+        game.renderTexture(grassTexture);
+        game.display();
     }
 
     game.cleanUp();
