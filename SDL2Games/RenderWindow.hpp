@@ -10,6 +10,7 @@ public:
     void cleanUp();
     bool running();
     void quit();
+    SDL_Texture* loadTexure(const char* texture_filePath);
 private:
     SDL_Window* window;
     SDL_Renderer* renderer; 
